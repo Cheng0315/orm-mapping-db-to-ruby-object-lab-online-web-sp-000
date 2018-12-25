@@ -56,7 +56,7 @@ class Student
       WHERE students.id <= ?
     SQL
 
-    DB[:conn].execute(sql, num).map {|d| self.new_from_db(d)}.first
+    DB[:conn].execute(sql, num)
   end
 
   def save
