@@ -49,7 +49,7 @@ class Student
     DB[:conn].execute(sql).map {|d| self.new_from_db(d)}
   end
 
-  def self.first_X_students_in_grade_10
+  def self.first_X_students_in_grade_10(student)
     sql = <<-SQL
       SELECT *
       FROM students
