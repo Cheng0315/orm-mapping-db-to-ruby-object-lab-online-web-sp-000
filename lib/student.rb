@@ -26,7 +26,7 @@ class Student
       LIMIT 1
     SQL
 
-    DB[:conn].execute(sql, name).map {|d| self.new_from_db(d)}
+    DB[:conn].execute(sql, name).map {|d| self.new_from_db(d)}.first
   end
 
   def save
